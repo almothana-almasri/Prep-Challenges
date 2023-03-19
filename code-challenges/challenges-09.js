@@ -22,7 +22,7 @@ const arrInc = (arr) => {
     let result = [];
     arr.forEach(num => {
         result.push(num + 10);
-      });
+    });
     // write your code here
     return result;
 }
@@ -42,6 +42,11 @@ const arrInc = (arr) => {
 // 
 const roundDecimals = (arr) => {
     // write your code here
+    const result = [];
+    arr.forEach((value) => {
+        result.push(Math.round(value));
+    });
+    return result;
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -111,7 +116,16 @@ const roundDecimals = (arr) => {
 
 const employeesBonus = (arr) => {
     // write your code here
-}
+    arr.forEach(employee => {
+        if (employee.workHours > 8) {
+            employee.salary = `${Number(employee.salary.slice(0, -1)) + 100}$`;
+        } else {
+            employee.salary = `${Number(employee.salary.slice(0, -1)) + 50}$`;
+        }
+    });
+    return arr;
+};
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
