@@ -45,7 +45,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function encryption(s) {\n    s = s.replace(/\\s+/g, '');\n    let len = s.length;\n    let row = Math.floor(Math.sqrt(len));\n    let col = Math.ceil(Math.sqrt(len));\n    if (row * col < len) {\n        row++;\n    }\n    let result = '';\n    for (let i = 0; i < col; i++) {\n        for (let j = 0; j < row; j++) {\n            let idx = j * col + i;\n            if (idx < len) {\n                result += s[idx];\n            }\n        }\n        if (i < col - 1) {\n            result += ' ';\n        }\n    }\n    return result;\n    // Write your code here\n\n}"
             ],
             "outputs": []
         },
@@ -59,7 +59,7 @@
         {
             "language": "javascript",
             "source": [
-                ""
+                "function timeInWords(h, m) {\n    const words = [\n        \"zero\", \"one\", \"two\", \"three\", \"four\", \"five\", \"six\", \"seven\", \"eight\", \"nine\", \"ten\",\n        \"eleven\", \"twelve\", \"thirteen\", \"fourteen\", \"fifteen\", \"sixteen\", \"seventeen\", \"eighteen\", \"nineteen\", \"twenty\"\n    ];\n\n    function numberToWords(num) {\n        if (num <= 20) {\n            return words[num];\n        } else {\n            return words[20] + ' ' + words[num - 20];\n        }\n    }\n\n    if (m === 0) {\n        return numberToWords(h) + \" o' clock\";\n    } else if (m > 0 && m <= 30) {\n        if (m === 15) {\n            return \"quarter past \" + numberToWords(h);\n        } else if (m === 30) {\n            return \"half past \" + numberToWords(h);\n        } else if (m === 1) {\n            return numberToWords(m) + \" minute past \" + numberToWords(h);\n        } else {\n            return numberToWords(m) + \" minutes past \" + numberToWords(h);\n        }\n    } else {\n        if (m === 45) {\n            return \"quarter to \" + numberToWords(h + 1);\n        } else if (m === 59) {\n            return numberToWords(60 - m) + \" minute to \" + numberToWords(h + 1);\n        } else {\n            return numberToWords(60 - m) + \" minutes to \" + numberToWords(h + 1);\n        }\n    }\n     // Write your code here\n\n}"
             ],
             "outputs": []
         }
