@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Append And Delete](https://www.hackerrank.com/challenges/append-and-delete/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function appendAndDelete(s, t, k) {\n    let commonPrefix = 0;\n    while (commonPrefix < s.length && commonPrefix < t.length && s[commonPrefix] === t[commonPrefix]) {\n        commonPrefix++;\n    }\n\n    let diffCount = s.length - commonPrefix + t.length - commonPrefix;\n    if (k >= s.length + t.length || k >= diffCount && (k - diffCount) % 2 === 0) {\n        return \"Yes\";\n    } else {\n        return \"No\";\n    }\n // Write your code here\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Encryption](https://www.hackerrank.com/challenges/encryption/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function encryption(s) {\n    s = s.replace(/\\s+/g, '');\n    let len = s.length;\n    let row = Math.floor(Math.sqrt(len));\n    let col = Math.ceil(Math.sqrt(len));\n    if (row * col < len) {\n        row++;\n    }\n    let result = '';\n    for (let i = 0; i < col; i++) {\n        for (let j = 0; j < row; j++) {\n            let idx = j * col + i;\n            if (idx < len) {\n                result += s[idx];\n            }\n        }\n        if (i < col - 1) {\n            result += ' ';\n        }\n    }\n    return result;\n    // Write your code here\n\n}"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [The Time In Words](https://www.hackerrank.com/challenges/the-time-in-words/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "function timeInWords(h, m) {\n    const words = [\n        \"zero\", \"one\", \"two\", \"three\", \"four\", \"five\", \"six\", \"seven\", \"eight\", \"nine\", \"ten\",\n        \"eleven\", \"twelve\", \"thirteen\", \"fourteen\", \"fifteen\", \"sixteen\", \"seventeen\", \"eighteen\", \"nineteen\", \"twenty\"\n    ];\n\n    function numberToWords(num) {\n        if (num <= 20) {\n            return words[num];\n        } else {\n            return words[20] + ' ' + words[num - 20];\n        }\n    }\n\n    if (m === 0) {\n        return numberToWords(h) + \" o' clock\";\n    } else if (m > 0 && m <= 30) {\n        if (m === 15) {\n            return \"quarter past \" + numberToWords(h);\n        } else if (m === 30) {\n            return \"half past \" + numberToWords(h);\n        } else if (m === 1) {\n            return numberToWords(m) + \" minute past \" + numberToWords(h);\n        } else {\n            return numberToWords(m) + \" minutes past \" + numberToWords(h);\n        }\n    } else {\n        if (m === 45) {\n            return \"quarter to \" + numberToWords(h + 1);\n        } else if (m === 59) {\n            return numberToWords(60 - m) + \" minute to \" + numberToWords(h + 1);\n        } else {\n            return numberToWords(60 - m) + \" minutes to \" + numberToWords(h + 1);\n        }\n    }\n     // Write your code here\n\n}"
+            ],
+            "outputs": []
+        }
+    ]
+}
